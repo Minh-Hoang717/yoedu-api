@@ -1,0 +1,28 @@
+package com.yo.day1.common;
+
+import java.time.LocalDateTime;
+
+public record ApiResponse<T>(boolean success, String message, T data, LocalDateTime timestamp) {
+
+    public static <T> ApiResponse<T> success(String message, T data){
+        return new ApiResponse<>(true, message,data,LocalDateTime.now());
+    }
+ // <T> thay vì phải thay báo mấy chục kdl, thì dùng T, T đại diện cho kdl mà mình chưa biết, sau này có kdl
+    // thì mình truyển vô thôi ( overloading)
+    // phần genarate này sẽ thấy rõ thì làm bài toán về overloading
+    public static <T> ApiResponse<T> success(T data){
+        return  success("success",data);
+    }
+
+    public static ApiResponse<Void> successMessage(String message){
+        return success(message,null);
+    }
+
+    public static ApiResponse<Void> error(String message){
+        return new ApiResponse<>(false,message,null,LocalDateTime.now());
+    }
+
+    public static <T> ApiResponse<T> error(String message, T data){
+        return new ApiResponse<>(false,message,data,LocalDateTime.now());
+    }
+}
