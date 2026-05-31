@@ -1,9 +1,9 @@
-package com.yo.day1.reponsitory;
+package com.yo.day1.repository;
 
 import com.yo.day1.domain.entity.Student;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface StudentReponsitory extends JpaRepository<Student, Long> {
+public interface StudentRepository extends JpaRepository<Student, Long> {
 
 
 }
