@@ -1,3 +1,4 @@
+
 spring:
   application:
     name: day1
@@ -13,7 +14,7 @@ spring:
     show-sql: true
     open-in-view: false
     hibernate:
-      ddl-auto: validate
+      ddl-auto: update
     properties:
       hibernate:
         format_sql: true
@@ -22,5 +23,12 @@ spring:
     init:
       mode: never
 
-  server:
-    port: 8080
+server:
+  port: 8080
+
+app:
+  jwt:
+   issuer: yoedu-demo
+   secret: 12345678123456781234567812345678
+   access-token-ttl-minutes: 480
+   refresh-token-ttl-days: 7

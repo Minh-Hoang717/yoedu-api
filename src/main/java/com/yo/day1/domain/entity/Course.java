@@ -3,11 +3,13 @@ package com.yo.day1.domain.entity;
 import com.yo.day1.domain.AuditableEntity;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
 import lombok.Data;
 import org.springframework.data.domain.Auditable;
 
 @Entity
 @Data
+@Table(name = "courses")
 public class Course extends AuditableEntity {
     @Column(columnDefinition = "varchar(20)")
     private String courseCode; // default trong database sẽ là course_code
@@ -20,7 +22,7 @@ public class Course extends AuditableEntity {
 
     private double tuitionFee;
 
-    private int totalSession;
+    private int totalSessions;
 
     private byte isActive;
 }

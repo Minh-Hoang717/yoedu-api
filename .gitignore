@@ -31,3 +31,7 @@ build/
 
 ### VS Code ###
 .vscode/
+
+/database/
+
+SPRING_BOOT_ROADMAP.md
